@@ -123,7 +123,7 @@ class Buffer {
     int currentX = x;
 
     // Use grapheme clusters for proper Unicode handling (emojis, ZWJ sequences, etc.)
-    for (final grapheme in text.characters) {
+    for (final grapheme in UnicodeWidth.normalize(text).characters) {
       if (currentX >= width) break;
 
       final charWidth = UnicodeWidth.graphemeWidth(grapheme);

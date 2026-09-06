@@ -91,10 +91,9 @@ Future<void> _runApp(
         binding = TerminalBinding(terminal);
 
         binding!.initialize();
-        binding!.attachRootComponent(app);
 
-        // Detect the terminal's grapheme-width behavior before the first
-        // frame.
+        // Detect the terminal's grapheme-width behavior before the root is
+        // mounted.
         if (!isShellMode && stdout.hasTerminal && stdin.hasTerminal) {
           try {
             await detectWidthMethod(
@@ -103,6 +102,8 @@ Future<void> _runApp(
             );
           } catch (_) {}
         }
+
+        binding!.attachRootComponent(app);
 
         if (enableHotReload && !bool.fromEnvironment('dart.vm.product')) {
           await binding!.initializeHotReload();

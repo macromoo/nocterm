@@ -18,7 +18,7 @@ class _Probe {
 const _probes = <_Probe>[
   _Probe('👍🏽', 2, 4), // emoji + skin tone modifier
   _Probe('❤️', 2, 1), // narrow base + VS16
-  _Probe('🇺🇸', 2, 4), // regional indicator pair
+  _Probe('👮‍♂️', 2, 4), // ZWJ sequence
   _Probe('中', 2, 2), // lone wide char (anchor)
 ];
 

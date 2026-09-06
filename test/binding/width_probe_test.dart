@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('classifyWidthMethod', () {
-    // Probe order: 👍🏽, ❤️, 🇺🇸, 中.
+    // Probe order: 👍🏽, ❤️, 👮‍♂️, 中.
     const graphemeAdvances = [2, 2, 2, 2];
     const legacyAdvances = [4, 1, 4, 2];
 

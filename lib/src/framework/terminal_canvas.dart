@@ -91,7 +91,7 @@ class TerminalCanvas {
     int currentColumn = x;
 
     // Use grapheme clusters to properly handle ZWJ sequences and other complex emoji
-    for (final grapheme in text.characters) {
+    for (final grapheme in UnicodeWidth.normalize(text).characters) {
       if (currentColumn >= area.width) break;
 
       final width = UnicodeWidth.graphemeWidth(grapheme);
